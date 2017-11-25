@@ -1,0 +1,37 @@
+q1 <- function (){
+  count = 0
+  for (i in 1:1000){
+    if(i %% 3 == 0 || i %% 7 == 0 || i %% 11 == 0){}
+    else{
+      count <- count + 1
+    }
+    
+    
+  }
+  count
+}
+
+q1()
+
+q2 <- function(x){
+  countna <- 0
+  for (i in 1:length(x)){
+    if(is.na(x[i]))
+      countna <- countna +1
+  }
+  return(countna)
+}
+
+q2(232)
+
+q3 <- function(data){
+  col <- ncol(data)
+  countna <- numeric(length = col)        
+  for (i in 1:col){
+    countna[i] <- q2(data[,i])
+  }
+  
+  datanames <- names(data)
+  names(countna) <- datanames
+  countna
+}
